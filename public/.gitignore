@@ -1,0 +1,3 @@
+#Ignore everything in this directory
+#Except this file ,git会忽略public目录下上传的头像，而不忽略public／img目录
+!.gitignore
