@@ -87,7 +87,14 @@ app.use((err, req, res, next)=>{
     console.log(err);
     req.flash('error', err.message);
     res.redirect('/posts')
-})
-app.listen(config.port,()=>{
-    console.log(`${pkg.name} listening on port ${config.port}`)
 });
+
+//直接启动index.js则会监听端口启动程序，如果index.js被require了，则导出app，通常用于测试。
+if(module.parent){
+    //被require,则导出app
+    module.exports = app;
+}else{
+    app.listen(config.port,()=>{
+        console.log(`${pkg.name} listening on port ${config.port}`)
+    });
+}

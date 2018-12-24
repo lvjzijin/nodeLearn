@@ -1,3 +1,6 @@
+原文档地址：https://github.com/nswbmw/N-blog.git
+本文仅作个人学习node使用
+
 对应文件夹及文件夹的用处:
 
 models: 存放操作数据库的文件
